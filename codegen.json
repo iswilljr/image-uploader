@@ -1,0 +1,15 @@
+{
+  "overwrite": true,
+  "schema": "./typeDefs.ts",
+  "emitLegacyCommonJSImports": false,
+  "generates": {
+    "./types/gql.d.ts": {
+      "plugins": ["typescript", "typescript-resolvers"]
+    },
+    "./client/src/gql": {
+      "documents": "./client/src/services/graphql.ts",
+      "preset": "client",
+      "plugins": []
+    }
+  }
+}
