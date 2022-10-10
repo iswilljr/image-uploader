@@ -7,6 +7,8 @@ import type { Express } from "express";
 
 export async function startApolloServer(app: Express) {
   const graphQLServer = new ApolloServer({
+    csrfPrevention: true,
+    cache: "bounded",
     typeDefs,
     resolvers,
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
