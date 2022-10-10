@@ -18,7 +18,10 @@ export function useUpload({ file }: { file?: FileWithPath }) {
         if (res.status >= 200 && res.status < 400) setStatus("uploaded");
         setData(res.data);
       })
-      .catch((err) => (setStatus("failed"), setError(err.message)));
+      .catch((err) => {
+        setStatus("failed");
+        setError(err.message);
+      });
   }, [file]);
 
   return {

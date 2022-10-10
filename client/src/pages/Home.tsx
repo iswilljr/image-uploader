@@ -1,12 +1,13 @@
-import { Title, Button, Text, Progress } from "@mantine/core";
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import { FileWithPath } from "@mantine/dropzone";
+import { Title, Button, Text, Progress } from "@mantine/core";
 import { useEffect, useRef, useState } from "react";
-import { useUpload } from "./hooks/use-upload";
 import { useNavigate } from "react-router-dom";
-import { useStyles } from "./styles";
-import Dropzone from "./components/Dropzone";
+import { useStyles } from "../styles";
+import { useUpload } from "../hooks/use-upload";
+import Dropzone from "../components/Dropzone";
 
-function App() {
+export default function Home() {
   const navigate = useNavigate();
   const { classes, cx, theme } = useStyles();
   const [error, setError] = useState<string>();
@@ -20,7 +21,7 @@ function App() {
   useEffect(() => {
     if (status !== "uploaded" || !id) return;
     navigate(`/result/${id}`);
-  }, [status]);
+  }, [id, navigate, status]);
 
   return (
     <div>
@@ -49,7 +50,7 @@ function App() {
         </Button>
         {(error || uploadError) && (
           <Text color="red" style={{ lineBreak: "anywhere", marginTop: 16 }} size="sm">
-            {error || uploadError}
+            {error ?? uploadError}
           </Text>
         )}
       </main>
@@ -64,5 +65,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

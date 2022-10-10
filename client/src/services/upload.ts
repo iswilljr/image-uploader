@@ -11,7 +11,7 @@ export const upload = async ({ file, onUploadProgress }: Upload) => {
     const data = new FormData();
     data.append("file", file);
 
-    const res = await axios.post<string>("http://localhost:4000/api/upload", data, {
+    const res = await axios.post<string>("/api/upload", data, {
       onUploadProgress({ progress }) {
         progress && onUploadProgress(Math.floor(progress * 100));
       },

@@ -1,9 +1,9 @@
 import { Button, CopyButton, Text } from "@mantine/core";
 import { IconX, IconLoader } from "@tabler/icons";
-import { IMAGE } from "./services/graphql";
+import { IMAGE } from "../services/graphql";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { useResultStyles } from "./styles";
+import { useResultStyles } from "../styles";
 
 export default function Result() {
   const navigate = useNavigate();

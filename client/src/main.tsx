@@ -1,17 +1,17 @@
+import "./index.css";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./services/apollo";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 import { StrictMode } from "react";
+import Home from "./pages/Home";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import Result from "./Result";
-import "./index.css";
+import Result from "./pages/Result";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "/result/:id",
