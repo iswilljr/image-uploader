@@ -1,6 +1,6 @@
+import { Image as ImageType } from "../types/gql.js";
+import { MAX_FILE_SIZE } from "../config.js";
 import { Schema, model } from "mongoose";
-import { MAX_FILE_SIZE } from "./config.js";
-import { Image as ImageType } from "./types/gql.js";
 
 const ImageSchema = new Schema(
   {

@@ -1,6 +1,6 @@
 import { UserInputError } from "apollo-server-core";
 import { IMAGES_PATH, URL } from "./config.js";
-import { Image } from "./image.js";
+import { Image } from "./model/image.js";
 import { Resolvers } from "./types/gql.js";
 
 export const resolvers: Resolvers = {
