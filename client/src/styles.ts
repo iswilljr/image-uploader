@@ -67,6 +67,17 @@ export const useResultStyles = createStyles((theme) => ({
     paddingLeft: theme.spacing.xs,
     borderRadius: theme.radius.md,
     backgroundColor: theme.colors.gray[4],
+    [theme.fn.smallerThan("xs")]: {
+      display: "block",
+      maxWidth: "50vw",
+      padding: theme.spacing.xs,
+    },
+  },
+  button: {
+    [theme.fn.smallerThan("xs")]: {
+      width: "100%",
+      marginTop: theme.spacing.xs,
+    },
   },
   url: {
     whiteSpace: "nowrap",

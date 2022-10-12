@@ -23,7 +23,7 @@ export default function Result() {
               <Text className={classes.url}>{image.url}</Text>
               <CopyButton value={image.url}>
                 {({ copied, copy }) => (
-                  <Button color={copied ? "teal" : "blue"} onClick={copy}>
+                  <Button className={classes.button} color={copied ? "teal" : "blue"} onClick={copy}>
                     {copied ? "Copied url" : "Copy url"}
                   </Button>
                 )}

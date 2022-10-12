@@ -38,9 +38,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
               width: "100%",
               display: "grid",
               placeItems: "center",
-              [theme.fn.smallerThan("md")]: {
-                padding: theme.spacing.xs,
-              },
+              padding: theme.spacing.xs,
             },
             ".box": {
               backgroundColor: theme.white,
@@ -48,7 +46,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
               borderRadius: theme.radius.md,
               boxShadow: theme.shadows.lg,
               textAlign: "center",
-              width: 400,
+              maxWidth: 400,
             },
           }),
         }}
